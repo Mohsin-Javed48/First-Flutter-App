@@ -1,7 +1,6 @@
-import 'package:first_app/views/Widgets/navbar_widget.dart';
-import 'package:first_app/views/widget_tree.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/data/notifiers.dart';
+import 'package:first_app/views/pages/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +34,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           home: const SafeArea(
-            child: WidgetTree(),
+            child: const WelcomePage(),
           ),
         );
       }, // Added trailing comma here
