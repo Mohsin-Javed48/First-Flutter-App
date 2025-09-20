@@ -1,5 +1,5 @@
 import 'package:first_app/views/pages/login_page.dart';
-import 'package:first_app/views/widget_tree.dart';
+import 'package:first_app/views/pages/onBoarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -33,9 +33,9 @@ class WelcomePage extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => LoginPage(title: "Register")));
+                    context,
+                    MaterialPageRoute(builder: (context) => onBoardingPage()),
+                  );
                 },
                 child: Text('Get Started'),
               ),
@@ -45,10 +45,10 @@ class WelcomePage extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const LoginPage(title: "Login")));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginPage(title: "Login")),
+                  );
                 },
                 child: Text('Login'),
               ),

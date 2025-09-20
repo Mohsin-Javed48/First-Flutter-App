@@ -1,6 +1,7 @@
 import 'package:first_app/views/Widgets/hero_widget.dart';
 import 'package:first_app/views/widget_tree.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
               padding: EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  HeroWidget(title: widget.title),
+                  HeroWidget(title: "Login"),
                   SizedBox(height: 20.0),
                   TextField(
                     controller: emailController,
@@ -65,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                     padding: EdgeInsets.symmetric(horizontal: 0),
                     child: ElevatedButton(
                       style: FilledButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 86, 86, 86),
+                        backgroundColor: const Color.fromARGB(255, 1, 209, 202),
                         foregroundColor: Colors.white,
                         minimumSize: Size(double.infinity, 40),
                       ),

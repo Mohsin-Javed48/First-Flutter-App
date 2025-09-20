@@ -1,6 +1,8 @@
+import 'package:first_app/data/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/data/notifiers.dart';
 import 'package:first_app/views/pages/welcome_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +22,18 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
+  void initState() {
+    initThemeMode();
+    super.initState();
+  }
+
+  void initThemeMode() async {
+    final sharedPreferences = await SharedPreferences.getInstance();
+    final bool? repeat = sharedPreferences.getBool(KConstants.themeModeKey);
+    isDarkMode.value = repeat ?? true;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
       valueListenable: isDarkMode,
@@ -34,7 +48,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           home: const SafeArea(
-            child: const WelcomePage(),
+            child: WelcomePage(),
           ),
         );
       }, // Added trailing comma here
